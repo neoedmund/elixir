@@ -15,17 +15,16 @@
 {% block main %}
 
 <div class="lxrtree">
-    <table>
-        <tbody>
+
         {% if back_url is not none %}
-            <tr>
-                <td><a class="tree-icon icon-back" href="{{ back_url }}">Parent directory</a></td>
-                <td><a tabindex="-1" class="size" href="{{ back_url }}"></a></td>
-            </tr>
+<span class='fileItem'>
+                <a class="tree-icon icon-back" href="{{ back_url }}">Parent directory</a>
+                <a tabindex="-1" class="size" href="{{ back_url }}"></a>
+</span>
         {% endif %}
         {% for type, name, path, url, size in dir_entries %}
-            <tr>
-                <td>
+
+<span class='fileItem'>
                     <a class="tree-icon icon-{{- type if type != 'symlink' else 'blob' -}}"
                        href="{{ url }}">
                     {% if type == 'symlink' %}
@@ -34,18 +33,17 @@
                         {{ name }}
                     {% endif %}
                     </a>
-                </td>
-                <td>
+
+
                     <a tabindex="-1" class="size" href="{{ url }}">
                     {% if size is not none %}
-                        {{ size }} bytes
+                      ({{ size }})
                     {% endif %}
                     </a>
-                </td>
-            </tr>
+</span>
+
         {% endfor %}
-        </tbody>
-    </table>
+    
 </div>
 
 {% endblock %}

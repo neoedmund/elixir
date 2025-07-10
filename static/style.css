@@ -757,6 +757,9 @@ h2 {
 }
 .lxrtree {
   padding: 1em 0;
+  display: flex;
+	flex-wrap: wrap;
+  gap: 10px;
 }
 .lxrtree td a {
   display: block;
@@ -772,6 +775,7 @@ h2 {
 .tree-icon.icon-tree:before {
   color: #ffa264;
 }
+
 .tree-icon.icon-blob:before {
   color: #a0a7ce;
 }
@@ -787,6 +791,12 @@ h2 {
   opacity: 0.6;
   min-height: 1.5em; /* line_height + 2 * padding = 1.2em + 2 * 0.15em */
   text-align: right;
+  flex: 0 0 100px;
+}
+.fileItem{
+	display: flex;
+  flex: 0 0 350px;
+  justify-content: space-between;
 }
 
 
@@ -1044,9 +1054,10 @@ main {
   min-height: calc(100vh - 45px - 25px);
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+
   position: relative;
-  width: max-content;
+  
+  /* width: max-content; */
 }
 .js .wrapper {
   position: absolute;

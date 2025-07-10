@@ -587,7 +587,7 @@ def get_directory_entries(q: Query, base_url, tag: str, path: str) -> list[Direc
                 dir_entries.append(DirectoryEntry('symlink', name, link_target_path, f"{ base_url }{ link_target_path }", size))
             else:
                 dir_entries.append(DirectoryEntry('blob', name, file_path, f"{ base_url }{ file_path }", size))
-
+    dir_entries.sort(key=lambda entry: int(entry.size) if entry.size is not None else -1, reverse=True)
     return dir_entries
 
 # Generates response (status code and optionally HTML) of the `source` route

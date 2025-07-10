@@ -18,7 +18,7 @@
 #
 #  You should have received a copy of the GNU Affero General Public License
 #  along with Elixir.  If not, see <http://www.gnu.org/licenses/>.
-
+. /opt/lab/lab0/GAME/bar/Elixir.sh
 if [ ! -d "$LXR_REPO_DIR" ]; then
     echo "$0: Can't find repository"
     exit 1

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/home/neoe/venv/bin/python3
 
 #  This file is part of Elixir, a source code cross-referencer.
 #
