@@ -621,6 +621,7 @@ def generate_source_page(ctx: RequestContext, q: Query,
         template_ctx = {
             'code': generate_source(q, project, version, path),
             'path': path,
+            'lineCnt': q.get_file_raw(version, path).count('\n')
         }
         template = ctx.jinja_env.get_template('source.html')
     else:
